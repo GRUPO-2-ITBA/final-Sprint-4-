@@ -6,23 +6,22 @@ t1 = str(int(datetime.now().timestamp()))
 
 argumentos = sys.argv
 
-
 def estado(x):
-    return x[-1] == data["estado"] if data["estado"] != None else True
+    return  x[-1] == data["estado"].upper() if data["estado"] != None else True
 
 
 data = {
     "csv": argumentos[1],
     "dni": argumentos[2],
     "salida": argumentos[3],
-    "tipo": argumentos[4],
+    "tipo": argumentos[4].upper(),
     "estado": None,
-    "rangoFechas": argumentos[7] if len(argumentos) == 7 else None
+    "rangoFechas": argumentos[6] if len(argumentos) == 7 else None
 }
 
 if len(argumentos) > 5:
     data["rangoFechas" if ":" in argumentos[5] else "estado"] = argumentos[5]
-
+    
 file = open(data["csv"], "r", encoding='latin1')
 lineas = csv.reader(file)
 filtrado = [
@@ -31,3 +30,4 @@ filtrado = [
 ]
 file.close()
 print(filtrado)
+
