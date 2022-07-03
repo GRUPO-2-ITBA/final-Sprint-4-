@@ -36,5 +36,6 @@ if "salida "== 'CSV':
     fileCSV=csv.writer(f)
     fileCSV.writerows(filtrado)
     f.close()
+ #print(filtrado)....   
  print(filtrado)
 
