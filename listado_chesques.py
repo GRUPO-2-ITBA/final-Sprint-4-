@@ -36,6 +36,9 @@ if "salida "== 'CSV':
     fileCSV=csv.writer(f)
     fileCSV.writerows(filtrado)
     f.close()
- #print(filtrado)....   
+#print(filtrado)....
+#for x in range(len(filtrado)):
+#print filtrado[x],
+#No funciona por que no es un string xD
  print(filtrado)
 
