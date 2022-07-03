@@ -29,5 +29,12 @@ filtrado = [
     if x[-3] == data["dni"] and x[-2] == data["tipo"] and estado(x)
 ]
 file.close()
-print(filtrado)
+
+if "salida "== 'CSV':
+    timeStampActual = str(datetime.now().timestamp())
+    f = open("dni" + '-' + timeStampActual + '.csv',"a") 
+    fileCSV=csv.writer(f)
+    fileCSV.writerows(filtrado)
+    f.close()
+# print(filtrado)
 
