@@ -4,6 +4,7 @@ from datetime import datetime
 
 argumentos = sys.argv
 
+#diccionario
 data = {
     "csv": argumentos[1],
     "dni": argumentos[2],
@@ -36,7 +37,7 @@ def absoluteDate(date):
     return int(date/(60*60*24))
 
 
-
+#manejo de archivos
 file = open(data["csv"], "r", encoding='latin1')
 lineas = list(csv.reader(file))
 
