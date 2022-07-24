@@ -41,7 +41,7 @@ def absoluteDate(date):
 file = open(data["csv"], "r", encoding='latin1')
 lineas = list(csv.reader(file))
 
-file = [
+fild = [
     x for x in lineas
     if x[-3] == data["dni"] and x[-2] == data["tipo"] and estado(x) and fechas(x)  
 ]
@@ -51,8 +51,8 @@ if data["salida"] == 'csv':
     timeStampActual = str(datetime.now().timestamp())
     f = open("dni" + '-' + timeStampActual + '.csv',"a") 
     fileCSV=csv.writer(f)
-    fileCSV.writerows(file)
+    fileCSV.writerows(fild)
     f.close()
 else:
-    print(file)
+    print(fild)
 
